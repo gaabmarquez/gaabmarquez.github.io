@@ -28,7 +28,7 @@ const HeroComponent = styled.div`
       transform: translateY(0);
     }
     50% {
-      transform: translateY(50px);
+      transform: translateY(100px);
     }
     100% {
       transform: translateY(0);
@@ -48,15 +48,15 @@ export default function Hero() {
     <HeroComponent>
       <h1>
         Hello World! I'm
-        <span className='color-primary'> Gabriel Márquez</span>
+        <span className='title'> Gabriel Márquez</span>
       </h1>
       <h2>Software developer based in Uruguay</h2>
       <h3>Love to craft solutions, frontend and backend</h3>
       <h4>
         Scroll to know more about
-        <span className='color-primary'> me</span>
+        <span className='title'> me</span>
       </h4>
-      <i className='fas fa-mouse fa-2x  mouse color-primary'></i>
+      <i className='fas fa-mouse fa-2x  mouse title'></i>
     </HeroComponent>
   );
 }

@@ -27,8 +27,12 @@ export default function CustomNav() {
     };
   });
   const handleScroll = ev => {
-    if (window.pageYOffset > window.innerHeight) {
+    if (window.pageYOffset > window.innerHeight - 60) {
       setShow(true);
+      // console.log(window.location.href)
+      // if(window.location.href.includes('#')){
+      //   window.location= window.location.href.split('#')[0];
+      // }
     } else {
       setShow(false);
     }
@@ -37,9 +41,10 @@ export default function CustomNav() {
   return (
     <Nav
       className='navbar navbar-expand-lg fixed-top  navbar-dark bg-dark'
+      id='navbar'
       style={show ? { visibility: 'visible', opacity: '1' } : {}}
     >
-      <span className='navbar-brand'>Gabriel Márquez</span>
+      <span className=' title navbar-brand '>Gabriel Márquez</span>
       <button
         className='navbar-toggler'
         type='button'

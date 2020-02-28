@@ -18,13 +18,13 @@ const info = {
       company: 'Blue Trail Software',
       from: 'January 2018',
       to: 'January 2020',
-      description: `
-        Development of solutions with Angular 5 & 7, HTML, CSS, SASS among others.
-        Development of re usable components and libraries to improve maintainability.
-        Maintenance of existing application in Java using GWT and mGWT framework.
-        Jira Addons development using Javascript and React framework.
-        Maintenance of existing application in NodeJS, vanilla Javascript and Mongo database.
-    `
+      description: [
+        'Development of solutions with Angular 5 & 7, HTML, CSS, SASS among others.',
+        'Development of re usable components and libraries to improve maintainability.',
+        'Maintenance of existing application in Java using GWT and mGWT framework.',
+        'Jira Addons development using Javascript and React framework.',
+        'Maintenance of existing application in NodeJS, vanilla Javascript and Mongo database.'
+      ]
     },
     {
       id: 2,
@@ -32,16 +32,16 @@ const info = {
       company: 'Netlabs',
       from: 'May 2016',
       to: 'January 2018',
-      description: `
-        Management and monitoring of projects through agile methodologies.
-        Research of new technologies seeking productivity improvements .
-        Migration from monolithic architecture to microservices.
-        Design, implementation and deploy of microservices.
-        Web applications developed using Angular 2+, Bootstrap, CSS 3 and HTML5.
-        Scripting using shell, awk, vi.
-        Implementation of DevOps practice, techniques and tools.
-        Continuous Integration and Continuous Deployment proficiency in tools such as Jenkins CI, Nexus and SonarQube.
-`
+      description: [
+        'Management and monitoring of projects through agile methodologies.',
+        'Research of new technologies seeking productivity improvements .',
+        'Migration from monolithic architecture to microservices.',
+        'Design, implementation and deploy of microservices.',
+        'Web applications developed using Angular 2+, Bootstrap, CSS 3 and HTML5.',
+        'Scripting using shell, awk, vi.',
+        'Implementation of DevOps practice, techniques and tools.',
+        'Continuous Integration and Continuous Deployment proficiency in tools such as Jenkins CI, Nexus and SonarQube.'
+      ]
     },
     {
       id: 3,
@@ -49,14 +49,14 @@ const info = {
       company: 'GEOCOM',
       from: 'Agoust 2014',
       to: 'May 2016',
-      description: `
-      Developed backend solutions (Java, Spring, Hibernate, PostgreSQL and Oracle Databases)
-      Management and monitoring of projects.
-      Research of new technologies seeking productivity improvements.
-      Design and implementation of backend systems.
-      Web applications developed using HTML, CSS, JSP, JSF, Primefaces, Struts among others.
-      Continuous Integration and Continuous Deployment proficiency in tools such as Jenkins CI, Nexus and SonarQube.
-`
+      description: [
+        'Developed backend solutions (Java, Spring, Hibernate, PostgreSQL and Oracle Databases)',
+        'Management and monitoring of projects.',
+        'Research of new technologies seeking productivity improvements.',
+        'Design and implementation of backend systems.',
+        'Web applications developed using HTML, CSS, JSP, JSF, Primefaces, Struts among others.',
+        'Continuous Integration and Continuous Deployment proficiency in tools such as Jenkins CI, Nexus and SonarQube.'
+      ]
     }
   ]
 };
@@ -65,17 +65,15 @@ const App = () => {
   return (
     <div className='container'>
       <Hero />
-      <CustomNav />
-      <div data-spy='scroll' data-target='#navbar-example2' data-offset='0'>
-        <About id='about' about={info.about} />
-        <WorkExperience works={info.works} />
-        <Skills  className='dark-bg' />
-        <Portfolio  />
-      </div>
+      {/* <CustomNav /> */}
+      <About id='about' about={info.about} />
+      <WorkExperience works={info.works} />
+      <Skills />
+      <Portfolio />
 
-      <section id='fat' className='contact dark-bg'>
-        <h2>Contact</h2>
-      </section>
+      {/* <section className='contact mt-4'>
+        <h2 className='section-title'>Contact</h2>
+      </section> */}
     </div>
   );
 };

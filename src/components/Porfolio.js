@@ -3,7 +3,7 @@ import React from 'react';
 export default function Porfolio() {
   return (
     <section className='portfolio' id='portfolio'>
-      <h2>Portfolio</h2>
+      <h2 className='section-title'>Portfolio</h2>
 
       <div className='card' style={{ width: '18rem' }}>
         <img
@@ -14,11 +14,14 @@ export default function Porfolio() {
 
         <div className='card-body'>
           <p className='card-text'>
-            This project is a basic trello.com clone, with minimum
-            functionality.
+            This project is a basic Trello clone, with minimum functionality
+            implemented.
           </p>
+          <p>Created using React & Redux</p>
           <a
             href='https://github.com/gaabmarquez/trello-clone'
+            target='_blank'
+            rel='noopener noreferrer'
             className='github-link'
           >
             <i className='fab fa-github'></i>
@@ -27,6 +30,8 @@ export default function Porfolio() {
 
           <a
             href='https://gaabmarquez.github.io/trello-clone/'
+            target='_blank'
+            rel='noopener noreferrer'
             className='project-link'
           >
             <i className='fas fa-link'></i>
