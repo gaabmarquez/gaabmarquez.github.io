@@ -12,8 +12,6 @@ p {
   text-align: justify;
   padding-left: 1em;
   padding-right: 1em;
-
-
 }
 .title {
   color: $primary !important;
@@ -81,12 +79,32 @@ p {
   .work-company-date-container {
     margin-bottom: 2em;
   }
-
 }
 .portfolio {
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 10px;
+
+    .card {
+      margin: 10px;
+      .card-title {
+        text-align: center;
+      }
+      .card-text {
+        text-align: left;
+      }
+      .links {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
 
   a {
     color: $primary;
@@ -103,7 +121,6 @@ p {
   }
 
   .card-text {
-    // text-align: left;
     max-width: 100%;
   }
 }

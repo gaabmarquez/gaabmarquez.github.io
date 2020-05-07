@@ -56,7 +56,7 @@ export default function Hero() {
         Scroll to know more about
         <span className='title'> me</span>
       </h4>
-      <i className='fas fa-mouse fa-2x  mouse title'></i>
+      {/* <i className='fas fa-mouse fa-2x  mouse title'></i> */}
     </HeroComponent>
   );
 }
