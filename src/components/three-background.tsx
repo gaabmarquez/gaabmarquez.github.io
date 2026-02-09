@@ -4,9 +4,13 @@ import { useRef, useEffect, useCallback } from "react"
 import { useTheme } from "@/components/theme-provider"
 import * as THREE from "three"
 
-const PARTICLE_COUNT = 800
 const CONNECTION_DISTANCE = 120
 const MOUSE_RADIUS = 200
+
+function getParticleCount() {
+  if (typeof window === "undefined") return 800
+  return window.innerWidth < 768 ? 300 : 800
+}
 
 export function ParticleBackground() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -26,6 +30,8 @@ export function ParticleBackground() {
   useEffect(() => {
     const container = containerRef.current
     if (!container) return
+
+    const PARTICLE_COUNT = getParticleCount()
 
     // Scene setup
     const scene = new THREE.Scene()
@@ -284,16 +290,30 @@ export function ParticleBackground() {
     // Events
     window.addEventListener("mousemove", handleMouseMove, { passive: true })
 
+    // Debounced resize — ignore small height changes from mobile address bar
+    let resizeTimer: ReturnType<typeof setTimeout> | null = null
+    const initialHeight = container.clientHeight
     const handleResize = () => {
-      if (!container) return
-      camera.aspect = container.clientWidth / container.clientHeight
-      camera.updateProjectionMatrix()
-      renderer.setSize(container.clientWidth, container.clientHeight)
+      if (resizeTimer) clearTimeout(resizeTimer)
+      resizeTimer = setTimeout(() => {
+        if (!container) return
+        const newWidth = container.clientWidth
+        const newHeight = container.clientHeight
+        // On mobile, only resize if width changed or height changed significantly (>15%)
+        // This prevents the address bar show/hide from triggering constant resizes
+        const heightDelta = Math.abs(newHeight - initialHeight) / initialHeight
+        const isMobile = window.innerWidth < 768
+        if (isMobile && heightDelta < 0.15) return
+        camera.aspect = newWidth / newHeight
+        camera.updateProjectionMatrix()
+        renderer.setSize(newWidth, newHeight)
+      }, 150)
     }
     window.addEventListener("resize", handleResize)
 
     return () => {
       cancelAnimationFrame(frameRef.current)
+      if (resizeTimer) clearTimeout(resizeTimer)
       window.removeEventListener("mousemove", handleMouseMove)
       window.removeEventListener("resize", handleResize)
       renderer.dispose()

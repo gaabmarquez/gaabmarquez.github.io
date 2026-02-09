@@ -106,8 +106,20 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
+/* Use smooth scroll only for non-touch devices to avoid mobile jank */
+@media (hover: hover) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Prevent mobile viewport height jumps from address bar */
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ─── Keyframes ─── */
@@ -178,7 +190,16 @@ html {
 }
 
 .glass {
-  background: hsl(var(--background) / 0.6);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: hsl(var(--background) / 0.8);
+  backdrop-filter: blur(10px) saturate(150%);
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
+}
+
+/* Reduce glass blur on mobile for better scroll perf */
+@media (max-width: 767px) {
+  .glass {
+    background: hsl(var(--background) / 0.92);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
 }

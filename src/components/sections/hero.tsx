@@ -6,7 +6,7 @@ import { ParticleBackground } from "@/components/three-background"
 
 export function Hero() {
   return (
-    <section className="relative min-h-[100dvh] flex flex-col justify-center px-6 pt-16 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-center px-6 pt-16 overflow-x-hidden">
       {/* Three.js particle background */}
       <ParticleBackground />
 
