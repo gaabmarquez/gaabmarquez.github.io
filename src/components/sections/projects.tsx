@@ -1,14 +1,15 @@
+"use client"
+
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, Folder } from "lucide-react"
+import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 
 interface Project {
   name: string
@@ -44,31 +45,43 @@ const projects: Project[] = [
 ]
 
 export function Projects() {
+  const { ref, isVisible } = useAnimateOnScroll()
+
   return (
-    <section id="projects" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section id="projects" className="py-24 px-6 relative">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-1/2 right-0 w-72 h-72 rounded-full bg-chart-3/3 blur-3xl" />
+      </div>
+
+      <div
+        ref={ref}
+        className={`max-w-5xl mx-auto transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
         <h2 className="text-2xl font-bold tracking-tight mb-2 flex items-center gap-3">
-          <span className="text-sm font-mono text-muted-foreground font-normal">03.</span>
+          <span className="text-sm font-mono text-primary font-normal">03.</span>
           Things I&apos;ve Built
+          <div className="h-px bg-border flex-1 ml-4" />
         </h2>
-        <div className="h-px bg-border flex-1 mb-10" />
+        <div className="h-0.5 w-16 bg-gradient-to-r from-primary to-accent rounded-full mb-10" />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
             <Card
               key={project.name}
-              className="flex flex-col hover:shadow-lg transition-shadow"
+              className="flex flex-col gradient-border border-border/50 group hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-500"
             >
               <CardHeader>
-                <div className="flex items-center justify-between mb-2">
-                  <Folder className="h-8 w-8 text-primary" />
-                  <div className="flex items-center gap-2">
+                <div className="flex items-center justify-between mb-3">
+                  <Folder className="h-9 w-9 text-primary transition-transform duration-300 group-hover:scale-110" />
+                  <div className="flex items-center gap-3">
                     {project.github && (
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-foreground transition-colors"
+                        className="text-muted-foreground hover:text-primary hover:-translate-y-0.5 transition-all duration-300"
                         aria-label={`${project.name} GitHub`}
                       >
                         <Github className="h-4 w-4" />
@@ -79,7 +92,7 @@ export function Projects() {
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-foreground transition-colors"
+                        className="text-muted-foreground hover:text-primary hover:-translate-y-0.5 transition-all duration-300"
                         aria-label={`${project.name} live demo`}
                       >
                         <ExternalLink className="h-4 w-4" />
@@ -87,7 +100,9 @@ export function Projects() {
                     )}
                   </div>
                 </div>
-                <CardTitle className="text-lg">{project.name}</CardTitle>
+                <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300">
+                  {project.name}
+                </CardTitle>
                 <CardDescription className="leading-relaxed">
                   {project.description}
                 </CardDescription>
@@ -95,7 +110,7 @@ export function Projects() {
               <CardFooter className="mt-auto">
                 <div className="flex flex-wrap gap-1.5">
                   {project.tech.map((t) => (
-                    <Badge key={t} variant="outline" className="text-xs">
+                    <Badge key={t} variant="outline" className="text-xs border-border/50 text-muted-foreground">
                       {t}
                     </Badge>
                   ))}
