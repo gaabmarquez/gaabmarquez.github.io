@@ -152,8 +152,8 @@ export function Experience() {
 
       <div
         ref={ref}
-        className={`max-w-5xl mx-auto transition-all duration-700 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        className={`max-w-5xl mx-auto will-change-[transform,opacity] transition-[transform,opacity] duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >
         <h2 className="text-2xl font-bold tracking-tight mb-2 flex items-center gap-3">
