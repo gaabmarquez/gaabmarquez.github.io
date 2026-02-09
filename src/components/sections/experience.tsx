@@ -13,59 +13,131 @@ import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 interface Position {
   title: string
   company: string
+  location: string
   period: string
+  summary?: string
   highlights: string[]
   tech: string[]
 }
 
 const positions: Position[] = [
   {
-    title: "Full Stack Developer",
+    title: "Full Stack Engineer",
+    company: "American Bank",
+    location: "Remote",
+    period: "Mar 2023 -- Present",
+    summary:
+      "Contractor for a Texas-based bank, contributing to the Client Onboarding System and Bank Staff Backoffice.",
+    highlights: [
+      "Designed and implemented an intuitive, responsive client onboarding experience using React and Material UI",
+      "Integrated third-party APIs for identity verification, document management, and Google Maps to ensure regulatory compliance",
+      "Developed new backend endpoints in Java and automated SFTP file processing with SendGrid notifications",
+      "Introduced Cypress test automation for onboarding flows, delivering substantial time savings during a major platform overhaul",
+      "Collaborated with cross-functional teams for requirements gathering and system architecture design",
+    ],
+    tech: ["Java", "React", "Redux", "REST", "MySQL", "AWS", "S3", "CloudFront", "Cypress"],
+  },
+  {
+    title: "Backend Engineer",
+    company: "TrueNorth",
+    location: "Remote",
+    period: "Jul 2022 -- Mar 2023",
+    summary:
+      "Staff augmentation engineer on a US-based fintech team, maintaining and enhancing backend services in Go.",
+    highlights: [
+      "Developed new features and maintained backend applications in Go with a focus on code quality and test coverage",
+      "Integrated with diverse third-party providers using REST and designed gRPC endpoints for internal service communication",
+      "Collaborated with the product team in weekly grooming sessions to deliver high-demand features",
+      "Implemented automated unit tests using Go testing framework and testify library",
+    ],
+    tech: ["Golang", "gRPC", "REST", "Google Cloud", "Apache Kafka", "PostgreSQL"],
+  },
+  {
+    title: "Backend Engineer",
+    company: "Medici",
+    location: "Remote",
+    period: "Jul 2021 -- Jul 2022",
+    summary:
+      "Austin-based healthcare platform enabling doctor-patient communication via secure messaging, calls, and video.",
+    highlights: [
+      "Maintained and developed backend features for a healthcare platform with 800+ unit tests and rigorous PR review processes",
+      "Integrated third-party providers including Twilio for messaging and Doctor Chrono for EHR tasks",
+      "Built redundancy, availability, and circuit breaker patterns for critical integrations",
+      "Created Node.js scripts to generate reports from multiple APIs",
+      "Followed trunk-based development where approved PRs deploy through test, pre-prod, and prod in a single pipeline",
+    ],
+    tech: ["Java", "Spring", "Hibernate", "Node.js", "Kubernetes", "PostgreSQL", "RabbitMQ", "JUnit"],
+  },
+  {
+    title: "Full Stack Engineer / Technical Interviewer",
+    company: "Contractor",
+    location: "Montevideo, Uruguay",
+    period: "Feb 2021 -- Aug 2021",
+    highlights: [
+      "Delivered backend services in Java with Spring, Hibernate, and Kubernetes for government clients",
+      "Built web applications using React and Angular 10 for eCommerce and enterprise clients",
+      "Conducted technical interviews for Angular and full-stack positions, evaluating candidates on core web fundamentals",
+    ],
+    tech: ["Java", "Spring", "React", "Angular", "Kubernetes", "PostgreSQL"],
+  },
+  {
+    title: "Full Stack Engineer",
     company: "dLocal",
-    period: "Mar 2020 -- Present",
+    location: "Montevideo, Uruguay",
+    period: "Mar 2020 -- Feb 2021",
+    summary:
+      "360 payments platform handling mass online payments across LATAM, APAC, and EMEA growth markets.",
     highlights: [
-      "Build and maintain payment processing features powering transactions across 40+ emerging markets",
-      "Develop merchant-facing dashboards and internal tools using React, Redux, and TypeScript",
-      "Design and implement backend microservices with Java and Spring Boot, handling high-throughput payment flows",
-      "Collaborate with cross-functional teams to deliver payment solutions for global merchants",
-      "Drive improvements in CI/CD pipelines and development workflows to accelerate delivery",
+      "Migrated a monolithic PHP codebase to a microservices architecture with React frontend and Java backend",
+      "Implemented responsive and print design for payment tickets and vouchers",
+      "Developed reusable React component libraries to improve cross-team maintainability",
+      "Maintained existing applications across Java, Spring Boot, PHP, and vanilla JavaScript",
     ],
-    tech: ["React", "TypeScript", "Java", "Spring Boot", "Microservices", "Docker"],
+    tech: ["React", "Java", "Spring Boot", "Node.js", "PHP", "CSS", "SASS"],
   },
   {
-    title: "Full Stack Developer",
+    title: "Full Stack Engineer",
     company: "Blue Trail Software",
+    location: "Montevideo, Uruguay",
     period: "Jan 2018 -- Feb 2020",
+    summary:
+      "San Francisco-based software company. Worked with US clients across education, fintech, and project management.",
     highlights: [
-      "Delivered full-stack features for US-based clients across diverse industries and tech stacks",
-      "Built responsive web applications with Angular and React, backed by Node.js and PHP services",
-      "Implemented RESTful APIs, integrated third-party services, and managed database schemas",
-      "Participated in code reviews and mentored junior developers on best practices",
+      "Built Angular libraries and reusable components for Center for Collaborative Classroom&apos;s educational platform",
+      "Implemented ADA compliance in GWT/mGWT applications for Sharetec credit union management",
+      "Completed SCRUMe, a Jira addon built with JavaScript and React for sprint analytics",
+      "Developed and maintained Node.js, MongoDB, and Angular applications for multiple clients",
     ],
-    tech: ["Angular", "React", "Node.js", "PHP", "PostgreSQL", "REST APIs"],
+    tech: ["Angular", "React", "Java", "Node.js", "MongoDB", "GWT", "Bootstrap"],
   },
   {
-    title: "Software Engineer",
-    company: "Netlabs",
+    title: "Full Stack Engineer",
+    company: "NetLabs",
+    location: "Montevideo, Uruguay",
     period: "May 2016 -- Jan 2018",
+    summary:
+      "Software company serving major telecom clients including Movistar.",
     highlights: [
-      "Developed enterprise web applications for government and logistics clients in Uruguay",
-      "Built frontend interfaces with Angular and backend services with Java and Spring",
-      "Contributed to system design decisions and database modeling for greenfield projects",
-      "Worked within Agile/Scrum teams delivering iterative releases",
+      "Migrated monolithic architecture to microservices using Docker, Kubernetes, and OpenShift",
+      "Developed web applications with Angular 2+, Bootstrap, and Java/Spring backend",
+      "Implemented CI/CD pipelines with Jenkins, Nexus, and SonarQube",
+      "Deployed and maintained Kubernetes and OpenShift platforms for production workloads",
     ],
-    tech: ["Angular", "Java", "Spring", "Oracle DB", "Agile"],
+    tech: ["Java", "Spring", "Angular", "Docker", "Kubernetes", "OpenShift", "Jenkins", "MySQL"],
   },
   {
-    title: "Java Developer",
+    title: "Java Engineer",
     company: "GEOCOM",
+    location: "Montevideo, Uruguay",
     period: "Aug 2014 -- May 2016",
+    summary:
+      "Retail software company. Worked on the Alkosto project, one of the biggest retailers in Colombia.",
     highlights: [
-      "Built GIS-based web applications for geographic data visualization and analysis",
-      "Developed backend services in Java and integrated mapping APIs for spatial data processing",
-      "Gained foundational experience in software development practices, version control, and team collaboration",
+      "Maintained and developed POS system features for 100+ retail locations across Colombia",
+      "Built backend systems with Java, Spring, Hibernate, and Apache Camel for system integration via queues",
+      "Created reports, promotion handling, and web components using JSP, JSF, and Primefaces",
     ],
-    tech: ["Java", "Spring", "GIS", "JavaScript", "SQL"],
+    tech: ["Java", "Spring", "Hibernate", "Apache Camel", "MySQL", "Oracle", "Shell"],
   },
 ]
 
@@ -116,6 +188,11 @@ export function Experience() {
                       {position.period}
                     </CardDescription>
                   </div>
+                  {position.summary && (
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {position.summary}
+                    </p>
+                  )}
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 mb-4">

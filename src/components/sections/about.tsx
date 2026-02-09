@@ -3,19 +3,23 @@
 import { Badge } from "@/components/ui/badge"
 import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 
-const technologies = [
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Angular",
-  "Java",
-  "Spring Boot",
-  "PostgreSQL",
-  "Docker",
-  "AWS",
-  "REST APIs",
-  "CI/CD",
+const techCategories = [
+  {
+    label: "Front End",
+    items: ["JavaScript", "React", "Redux", "Angular", "HTML", "CSS", "SASS"],
+  },
+  {
+    label: "Back End",
+    items: ["Java", "Golang", "Node.js", "Express", "Spring", "Hibernate", "REST APIs", "gRPC", "RabbitMQ"],
+  },
+  {
+    label: "Data Stores",
+    items: ["PostgreSQL", "MySQL", "Oracle", "MongoDB"],
+  },
+  {
+    label: "DevOps",
+    items: ["AWS", "Google Cloud", "Docker", "Kubernetes", "Jenkins", "CI/CD", "Nginx"],
+  },
 ]
 
 export function About() {
@@ -43,41 +47,47 @@ export function About() {
         <div className="grid md:grid-cols-3 gap-10">
           <div className="md:col-span-2 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              I&apos;m a software developer who thrives on turning complex
-              problems into clean, maintainable solutions. My work spans the
-              full stack&mdash;from designing intuitive user interfaces to
-              architecting robust backend services that handle real-world scale.
+              I&apos;m a Full Stack Engineer with over 10 years of experience
+              building scalable, secure, and maintainable software across
+              fintech, healthcare, and retail industries. I&apos;m passionate
+              about leveraging cutting-edge technologies to solve complex
+              challenges and drive operational efficiency.
             </p>
             <p>
-              Over the past decade, I&apos;ve worked across fintech, logistics,
-              and enterprise software, giving me a broad perspective on what
-              makes software truly reliable. I care deeply about code quality,
-              thoughtful architecture, and shipping features that actually solve
-              user problems.
+              Throughout my career I&apos;ve worked on everything from migrating
+              monolithic PHP codebases to microservices architectures, to
+              building client onboarding systems for banks, to maintaining
+              healthcare platforms with 800+ unit tests and rigorous code review
+              processes. I thrive in cross-functional teams and take pride in
+              mentoring peers to ensure high-quality deliverables.
             </p>
             <p>
-              When I&apos;m not writing code, you&apos;ll find me exploring new
-              technologies, contributing to side projects, or digging into
-              system design challenges. I believe the best engineers never stop
-              learning.
+              Whether it&apos;s designing gRPC endpoints in Go, building
+              responsive UIs in React, or orchestrating deployments with
+              Kubernetes&mdash;I care deeply about writing production-ready code
+              that stands up to real-world scale.
             </p>
           </div>
 
-          <div>
-            <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider text-primary">
-              Technologies I work with
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {technologies.map((tech) => (
-                <Badge
-                  key={tech}
-                  variant="secondary"
-                  className="hover:bg-primary/10 hover:text-primary hover:border-primary/20 border border-transparent transition-all duration-300 cursor-default"
-                >
-                  {tech}
-                </Badge>
-              ))}
-            </div>
+          <div className="space-y-5">
+            {techCategories.map((cat) => (
+              <div key={cat.label}>
+                <h3 className="text-xs font-semibold mb-2 uppercase tracking-wider text-primary">
+                  {cat.label}
+                </h3>
+                <div className="flex flex-wrap gap-1.5">
+                  {cat.items.map((tech) => (
+                    <Badge
+                      key={tech}
+                      variant="secondary"
+                      className="text-xs hover:bg-primary/10 hover:text-primary hover:border-primary/20 border border-transparent transition-all duration-300 cursor-default"
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

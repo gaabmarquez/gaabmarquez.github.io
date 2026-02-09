@@ -3,23 +3,26 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Gabriel Márquez | Full Stack Developer",
+  title: "Gabriel Márquez | Full Stack Engineer",
   description:
-    "Full stack developer based in Uruguay, specializing in building reliable, scalable web applications. Currently focused on payment infrastructure and fintech solutions.",
+    "Full Stack Engineer with 10+ years of experience building scalable, secure software for fintech, healthcare, and retail. Based in Uruguay.",
   keywords: [
     "Gabriel Márquez",
-    "Software Developer",
-    "Full Stack",
+    "Full Stack Engineer",
     "React",
-    "TypeScript",
     "Java",
+    "Golang",
+    "TypeScript",
+    "Angular",
+    "AWS",
+    "Kubernetes",
     "Uruguay",
   ],
   authors: [{ name: "Gabriel Márquez" }],
   openGraph: {
-    title: "Gabriel Márquez | Full Stack Developer",
+    title: "Gabriel Márquez | Full Stack Engineer",
     description:
-      "Full stack developer specializing in building reliable, scalable web applications.",
+      "Full Stack Engineer with 10+ years building scalable software for fintech, healthcare, and retail.",
     type: "website",
     locale: "en_US",
   },

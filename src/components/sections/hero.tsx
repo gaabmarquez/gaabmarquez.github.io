@@ -24,15 +24,15 @@ export function Hero() {
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-muted-foreground mb-6 animate-slide-up"
           style={{ animationDelay: "150ms" }}
         >
-          I build things for the web.
+          I engineer scalable software.
         </h2>
         <p
           className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed animate-slide-up"
           style={{ animationDelay: "300ms" }}
         >
-          Full stack developer based in Uruguay, specializing in building
-          reliable, scalable web applications. Currently focused on payment
-          infrastructure and fintech solutions.
+          Full Stack Engineer with 10+ years of experience building secure,
+          maintainable systems for fintech, healthcare, and retail. Passionate
+          about leveraging cutting-edge technologies to solve complex challenges.
         </p>
 
         <div
