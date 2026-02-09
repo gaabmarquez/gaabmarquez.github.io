@@ -2,16 +2,13 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
+import { ParticleBackground } from "@/components/three-background"
 
 export function Hero() {
   return (
     <section className="relative min-h-[100dvh] flex flex-col justify-center px-6 pt-16 overflow-hidden">
-      {/* Background decorative blobs */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-accent/5 blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-chart-3/3 blur-3xl" />
-      </div>
+      {/* Three.js particle background */}
+      <ParticleBackground />
 
       <div className="max-w-5xl mx-auto w-full">
         <p className="text-sm font-mono text-primary mb-6 tracking-wide animate-fade-in">
