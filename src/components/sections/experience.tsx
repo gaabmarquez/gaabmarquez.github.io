@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Card,
   CardContent,
@@ -6,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 
 interface Position {
   title: string
@@ -67,49 +70,78 @@ const positions: Position[] = [
 ]
 
 export function Experience() {
-  return (
-    <section id="experience" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-2xl font-bold tracking-tight mb-2 flex items-center gap-3">
-          <span className="text-sm font-mono text-muted-foreground font-normal">02.</span>
-          Where I&apos;ve Worked
-        </h2>
-        <div className="h-px bg-border flex-1 mb-10" />
+  const { ref, isVisible } = useAnimateOnScroll()
 
-        <div className="space-y-6">
+  return (
+    <section id="experience" className="py-24 px-6 relative">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-accent/3 blur-3xl" />
+      </div>
+
+      <div
+        ref={ref}
+        className={`max-w-5xl mx-auto transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
+        <h2 className="text-2xl font-bold tracking-tight mb-2 flex items-center gap-3">
+          <span className="text-sm font-mono text-primary font-normal">02.</span>
+          Where I&apos;ve Worked
+          <div className="h-px bg-border flex-1 ml-4" />
+        </h2>
+        <div className="h-0.5 w-16 bg-gradient-to-r from-primary to-accent rounded-full mb-10" />
+
+        <div className="relative space-y-6">
+          {/* Timeline line */}
+          <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-accent/30 to-transparent hidden md:block ml-[11px]" />
+
           {positions.map((position) => (
-            <Card key={`${position.company}-${position.period}`}>
-              <CardHeader>
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                  <CardTitle className="text-lg">
-                    {position.title}{" "}
-                    <span className="text-primary">@ {position.company}</span>
-                  </CardTitle>
-                  <CardDescription className="text-sm font-mono whitespace-nowrap">
-                    {position.period}
-                  </CardDescription>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 mb-4">
-                  {position.highlights.map((highlight, i) => (
-                    <li
-                      key={i}
-                      className="text-sm text-muted-foreground pl-4 relative before:content-['▸'] before:absolute before:left-0 before:text-primary"
-                    >
-                      {highlight}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap gap-1.5">
-                  {position.tech.map((t) => (
-                    <Badge key={t} variant="secondary" className="text-xs">
-                      {t}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            <div
+              key={`${position.company}-${position.period}`}
+              className="relative md:pl-10"
+            >
+              {/* Timeline dot */}
+              <div className="absolute left-0 top-7 w-6 h-6 rounded-full border-2 border-primary bg-background hidden md:flex items-center justify-center">
+                <div className="w-2 h-2 rounded-full bg-primary" />
+              </div>
+
+              <Card className="gradient-border border-border/50 hover:shadow-lg hover:shadow-primary/5 transition-all duration-500">
+                <CardHeader>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                    <CardTitle className="text-lg">
+                      {position.title}{" "}
+                      <span className="text-primary">@ {position.company}</span>
+                    </CardTitle>
+                    <CardDescription className="text-sm font-mono whitespace-nowrap text-primary/70">
+                      {position.period}
+                    </CardDescription>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 mb-4">
+                    {position.highlights.map((highlight, i) => (
+                      <li
+                        key={i}
+                        className="text-sm text-muted-foreground pl-4 relative before:content-['▸'] before:absolute before:left-0 before:text-primary"
+                      >
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-1.5">
+                    {position.tech.map((t) => (
+                      <Badge
+                        key={t}
+                        variant="secondary"
+                        className="text-xs bg-primary/10 text-primary border-0"
+                      >
+                        {t}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           ))}
         </div>
       </div>
