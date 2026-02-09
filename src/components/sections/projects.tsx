@@ -21,26 +21,42 @@ interface Project {
 
 const projects: Project[] = [
   {
+    name: "Client Onboarding System",
+    description:
+      "End-to-end digital onboarding platform for a US bank. Features identity verification, document management, Google Maps integration, and automated Cypress testing across multiple onboarding flows.",
+    tech: ["React", "Java", "AWS", "Cypress", "Material UI"],
+  },
+  {
+    name: "Healthcare Messaging Platform",
+    description:
+      "Secure doctor-patient communication platform with text, call, and video. Integrated Twilio, EHR providers, and built with circuit breakers and 800+ unit tests for reliability.",
+    tech: ["Java", "Spring", "Kubernetes", "RabbitMQ", "JUnit"],
+  },
+  {
+    name: "Payment Microservices Migration",
+    description:
+      "Migrated dLocal's monolithic PHP codebase to a microservices architecture with a React frontend, Node.js middleware, and Java/Spring Boot backend services handling payments across LATAM, APAC, and EMEA.",
+    tech: ["React", "Java", "Spring Boot", "Node.js", "PHP"],
+  },
+  {
+    name: "Telecom Microservices Platform",
+    description:
+      "Architected and deployed microservices for Movistar using Docker, Kubernetes, and OpenShift. Built CSV parsers, external service integrations, and internal web applications with Angular.",
+    tech: ["Java", "Kubernetes", "OpenShift", "Angular", "Docker"],
+  },
+  {
     name: "Trello Clone",
     description:
-      "A fully functional Kanban board app inspired by Trello. Features drag-and-drop cards, multiple boards, and persistent state management with Redux.",
-    tech: ["React", "Redux", "CSS Grid", "Local Storage"],
+      "Fully functional Kanban board app with drag-and-drop cards, multiple boards, and persistent state management. Built as a personal project to explore React and Redux patterns.",
+    tech: ["React", "Redux", "CSS Grid"],
     github: "https://github.com/gaabmarquez/trello-clone",
     live: "https://gaabmarquez.github.io/trello-clone",
   },
   {
-    name: "Book Worms",
+    name: "SCRUMe - Jira Addon",
     description:
-      "A book discovery platform that lets users search, browse, and save their favorite reads. Built with a clean UI and responsive layout.",
-    tech: ["Angular 7", "Bootstrap", "REST API"],
-    github: "https://github.com/gaabmarquez/book-worms",
-  },
-  {
-    name: "Cool Music",
-    description:
-      "A music discovery app powered by the Last.fm API. Users can search for artists, explore top tracks, and browse album details.",
-    tech: ["Angular 7", "Last.fm API", "RxJS"],
-    github: "https://github.com/gaabmarquez/cool-music",
+      "Jira plugin that visualizes sprint metrics and historical data. Integrates with Jira REST endpoints to display useful information about current and past sprints.",
+    tech: ["JavaScript", "React", "Jira API"],
   },
 ]
 
@@ -61,7 +77,7 @@ export function Projects() {
       >
         <h2 className="text-2xl font-bold tracking-tight mb-2 flex items-center gap-3">
           <span className="text-sm font-mono text-primary font-normal">03.</span>
-          Things I&apos;ve Built
+          Notable Projects
           <div className="h-px bg-border flex-1 ml-4" />
         </h2>
         <div className="h-0.5 w-16 bg-gradient-to-r from-primary to-accent rounded-full mb-10" />
