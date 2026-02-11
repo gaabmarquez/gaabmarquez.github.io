@@ -20,7 +20,7 @@ export function Contact() {
         }`}
       >
         <p className="text-sm font-mono text-primary mb-4">
-          04. What&apos;s Next?
+          05. What&apos;s Next?
         </p>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6">
           <span className="gradient-text">Let&apos;s Connect</span>

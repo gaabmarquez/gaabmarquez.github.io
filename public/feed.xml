@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gabriel Márquez | Blog</title>
+    <link>https://gaabmarquez.github.io/blog</link>
+    <description>Thoughts on software development, Java, React, DevOps, and the developer journey.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Feb 2026 14:35:09 GMT</lastBuildDate>
+    <atom:link href="https://gaabmarquez.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AI and Code Generation Tools: Promise and Pitfalls</title>
+      <link>https://gaabmarquez.github.io/blog/ai-code-generation-future</link>
+      <guid isPermaLink="true">https://gaabmarquez.github.io/blog/ai-code-generation-future</guid>
+      <description>Exploring the strengths, weaknesses, and future of AI code generation tools.</description>
+      <pubDate>Wed, 05 Feb 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Speeding Up Java Applications with Caffeine: A Comprehensive Guide</title>
+      <link>https://gaabmarquez.github.io/blog/java-caching-with-caffeine</link>
+      <guid isPermaLink="true">https://gaabmarquez.github.io/blog/java-caching-with-caffeine</guid>
+      <description>A comprehensive guide to using Caffeine cache for high-performance caching in Java applications.</description>
+      <pubDate>Tue, 04 Feb 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Asynchronous Methods in Spring Boot Using @Async</title>
+      <link>https://gaabmarquez.github.io/blog/async-methods-spring-boot</link>
+      <guid isPermaLink="true">https://gaabmarquez.github.io/blog/async-methods-spring-boot</guid>
+      <description>Learn how to use Spring Boot&apos;s @Async annotation for non-blocking method execution.</description>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Aspect-Oriented Programming in Java: A Real-World Example with Conditional Cron Jobs</title>
+      <link>https://gaabmarquez.github.io/blog/aspect-oriented-programming-java-conditional-cron-jobs</link>
+      <guid isPermaLink="true">https://gaabmarquez.github.io/blog/aspect-oriented-programming-java-conditional-cron-jobs</guid>
+      <description>Use AOP to conditionally run cron jobs based on a maintenance mode flag in Spring Boot.</description>
+      <pubDate>Sun, 02 Feb 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Demystifying Aspect-Oriented Programming (AOP) in Java: A Practical Introduction</title>
+      <link>https://gaabmarquez.github.io/blog/aspect-oriented-programming-java</link>
+      <guid isPermaLink="true">https://gaabmarquez.github.io/blog/aspect-oriented-programming-java</guid>
+      <description>An introduction to AOP in Java with a practical example of automatic cache invalidation.</description>
+      <pubDate>Sat, 01 Feb 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Parsing Logs with Regex in VS Code: The Ultimate Guide</title>
+      <link>https://gaabmarquez.github.io/blog/parsing-logs-with-regex-in-vs-code</link>
+      <guid isPermaLink="true">https://gaabmarquez.github.io/blog/parsing-logs-with-regex-in-vs-code</guid>
+      <description>Learn how to use regex in VS Code to efficiently parse, filter, and reformat logs.</description>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>How Online Courses Changed My Life Forever: $15 That Made Me Thousands</title>
+      <link>https://gaabmarquez.github.io/blog/how-online-courses-changed-my-life-forever</link>
+      <guid isPermaLink="true">https://gaabmarquez.github.io/blog/how-online-courses-changed-my-life-forever</guid>
+      <description>How a $15 online course investment led to doubling my income and transforming my career.</description>
+      <pubDate>Thu, 09 Jan 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>How to Setup Your Mac for Software Development (Java and React)</title>
+      <link>https://gaabmarquez.github.io/blog/how-to-setup-your-mac-for-software-development</link>
+      <guid isPermaLink="true">https://gaabmarquez.github.io/blog/how-to-setup-your-mac-for-software-development</guid>
+      <description>Step-by-step guide to setting up your Mac for Java and React development.</description>
+      <pubDate>Sun, 05 Jan 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Mastering Multiple SSH Keys</title>
+      <link>https://gaabmarquez.github.io/blog/mastering-multiple-ssh-keys</link>
+      <guid isPermaLink="true">https://gaabmarquez.github.io/blog/mastering-multiple-ssh-keys</guid>
+      <description>A practical guide to managing multiple SSH keys for different projects and clients.</description>
+      <pubDate>Thu, 02 Jan 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>What is a Jumpbox, and How to Use it in AWS?</title>
+      <link>https://gaabmarquez.github.io/blog/what-is-a-jumpbox</link>
+      <guid isPermaLink="true">https://gaabmarquez.github.io/blog/what-is-a-jumpbox</guid>
+      <description>Learn what a jumpbox is and how to use one in AWS to back up RDS databases to S3.</description>
+      <pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Running MySQL in Docker Like a Pro</title>
+      <link>https://gaabmarquez.github.io/blog/running-mysql-in-docker</link>
+      <guid isPermaLink="true">https://gaabmarquez.github.io/blog/running-mysql-in-docker</guid>
+      <description>A complete guide to setting up, managing, and automating MySQL in Docker containers.</description>
+      <pubDate>Fri, 20 Dec 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Why this blog?</title>
+      <link>https://gaabmarquez.github.io/blog/why-this-blog</link>
+      <guid isPermaLink="true">https://gaabmarquez.github.io/blog/why-this-blog</guid>
+      <description>The story behind starting this blog after years of hesitation.</description>
+      <pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
