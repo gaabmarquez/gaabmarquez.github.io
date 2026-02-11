@@ -10,6 +10,12 @@ import rehypeHighlight from "rehype-highlight"
 
 const postsDirectory = path.join(process.cwd(), "content/posts")
 
+export interface TocItem {
+  id: string
+  text: string
+  level: number
+}
+
 export interface BlogPost {
   slug: string
   title: string
@@ -19,6 +25,7 @@ export interface BlogPost {
   categories: string[]
   readingTime: number
   content: string
+  toc: TocItem[]
 }
 
 export interface BlogPostMeta {
@@ -34,6 +41,26 @@ export interface BlogPostMeta {
 function calculateReadingTime(text: string): number {
   const words = text.trim().split(/\s+/).length
   return Math.max(1, Math.round(words / 230))
+}
+
+function extractToc(html: string): { html: string; toc: TocItem[] } {
+  const toc: TocItem[] = []
+  const updated = html.replace(
+    /<(h[23])>(.*?)<\/h[23]>/g,
+    (_match, tag: string, text: string) => {
+      const level = parseInt(tag[1])
+      const plain = text.replace(/<[^>]*>/g, "")
+      const id = plain
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, "")
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+        .trim()
+      toc.push({ id, text: plain, level })
+      return `<${tag} id="${id}">${text}</${tag}>`
+    }
+  )
+  return { html: updated, toc }
 }
 
 export function getAllPostSlugs(): string[] {
@@ -77,6 +104,8 @@ export async function getPostBySlug(slug: string): Promise<BlogPost> {
     .use(rehypeStringify, { allowDangerousHtml: true })
     .process(rawContent)
 
+  const { html, toc } = extractToc(String(result))
+
   return {
     slug,
     title: data.title || slug,
@@ -85,6 +114,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost> {
     tags: data.tags || [],
     categories: data.categories || [],
     readingTime: calculateReadingTime(rawContent),
-    content: String(result),
+    content: html,
+    toc,
   }
 }

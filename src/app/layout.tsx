@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
+import { PageTransition } from "@/components/page-transition";
 import "./globals.css";
 
 const siteUrl = "https://gaabmarquez.github.io";
@@ -84,7 +85,9 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <PageTransition>{children}</PageTransition>
+        </ThemeProvider>
       </body>
     </html>
   );
