@@ -17,6 +17,7 @@ export interface BlogPost {
   description: string
   tags: string[]
   categories: string[]
+  readingTime: number
   content: string
 }
 
@@ -27,6 +28,12 @@ export interface BlogPostMeta {
   description: string
   tags: string[]
   categories: string[]
+  readingTime: number
+}
+
+function calculateReadingTime(text: string): number {
+  const words = text.trim().split(/\s+/).length
+  return Math.max(1, Math.round(words / 230))
 }
 
 export function getAllPostSlugs(): string[] {
@@ -45,7 +52,7 @@ export function getAllPosts(): BlogPostMeta[] {
 export function getPostMeta(slug: string): BlogPostMeta {
   const filePath = path.join(postsDirectory, `${slug}.md`)
   const fileContents = fs.readFileSync(filePath, "utf8")
-  const { data } = matter(fileContents)
+  const { data, content } = matter(fileContents)
   return {
     slug,
     title: data.title || slug,
@@ -53,6 +60,7 @@ export function getPostMeta(slug: string): BlogPostMeta {
     description: data.description || "",
     tags: data.tags || [],
     categories: data.categories || [],
+    readingTime: calculateReadingTime(content),
   }
 }
 
@@ -76,6 +84,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost> {
     description: data.description || "",
     tags: data.tags || [],
     categories: data.categories || [],
+    readingTime: calculateReadingTime(rawContent),
     content: String(result),
   }
 }

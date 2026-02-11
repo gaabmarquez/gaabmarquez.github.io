@@ -75,16 +75,6 @@ export function Header() {
             </Link>
           </Button>
           <ThemeToggle />
-          <Button
-            size="sm"
-            asChild
-            className="ml-2 bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all duration-300 animate-slide-down"
-            style={{ animationDelay: `${(sectionLinks.length + 1) * 100}ms` }}
-          >
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              Resume
-            </a>
-          </Button>
         </nav>
 
         <div className="flex items-center gap-2 md:hidden">
@@ -120,15 +110,6 @@ export function Header() {
             <span className="text-primary font-mono text-xs">0{sectionLinks.length + 1}.</span>
             Blog
           </Link>
-          <Button
-            size="sm"
-            asChild
-            className="mt-2 w-fit bg-primary/10 text-primary border border-primary/20"
-          >
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              Resume
-            </a>
-          </Button>
         </nav>
       )}
     </header>

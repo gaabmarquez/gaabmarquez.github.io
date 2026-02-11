@@ -6,8 +6,7 @@ export function GMLogo() {
   const [hovered, setHovered] = useState(false)
 
   return (
-    <a
-      href="#"
+    <span
       className="group relative block"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -60,6 +59,6 @@ export function GMLogo() {
           GM
         </text>
       </svg>
-    </a>
+    </span>
   )
 }
