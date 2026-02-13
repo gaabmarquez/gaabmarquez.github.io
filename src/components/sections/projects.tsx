@@ -8,15 +8,13 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Github, Folder } from "lucide-react"
+import { Folder } from "lucide-react"
 import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 
 interface Project {
   name: string
   description: string
   tech: string[]
-  github?: string
-  live?: string
 }
 
 const projects: Project[] = [
@@ -33,30 +31,10 @@ const projects: Project[] = [
     tech: ["Java", "Spring", "Kubernetes", "RabbitMQ", "JUnit"],
   },
   {
-    name: "Payment Microservices Migration",
-    description:
-      "Migrated dLocal's monolithic PHP codebase to a microservices architecture with a React frontend, Node.js middleware, and Java/Spring Boot backend services handling payments across LATAM, APAC, and EMEA.",
-    tech: ["React", "Java", "Spring Boot", "Node.js", "PHP"],
-  },
-  {
     name: "Telecom Microservices Platform",
     description:
       "Architected and deployed microservices for Movistar using Docker, Kubernetes, and OpenShift. Built CSV parsers, external service integrations, and internal web applications with Angular.",
     tech: ["Java", "Kubernetes", "OpenShift", "Angular", "Docker"],
-  },
-  {
-    name: "Trello Clone",
-    description:
-      "Fully functional Kanban board app with drag-and-drop cards, multiple boards, and persistent state management. Built as a personal project to explore React and Redux patterns.",
-    tech: ["React", "Redux", "CSS Grid"],
-    github: "https://github.com/gaabmarquez/trello-clone",
-    live: "https://gaabmarquez.github.io/trello-clone",
-  },
-  {
-    name: "SCRUMe - Jira Addon",
-    description:
-      "Jira plugin that visualizes sprint metrics and historical data. Integrates with Jira REST endpoints to display useful information about current and past sprints.",
-    tech: ["JavaScript", "React", "Jira API"],
   },
 ]
 
@@ -91,30 +69,6 @@ export function Projects() {
               <CardHeader>
                 <div className="flex items-center justify-between mb-3">
                   <Folder className="h-9 w-9 text-primary transition-transform duration-300 group-hover:scale-110" />
-                  <div className="flex items-center gap-3">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary hover:-translate-y-0.5 transition-all duration-300"
-                        aria-label={`${project.name} GitHub`}
-                      >
-                        <Github className="h-4 w-4" />
-                      </a>
-                    )}
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary hover:-translate-y-0.5 transition-all duration-300"
-                        aria-label={`${project.name} live demo`}
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                      </a>
-                    )}
-                  </div>
                 </div>
                 <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300">
                   {project.name}
