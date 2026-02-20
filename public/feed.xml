@@ -5,8 +5,15 @@
     <link>https://gaabmarquez.github.io/blog</link>
     <description>Thoughts on software development, Java, React, DevOps, and the developer journey.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Feb 2026 17:05:59 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Feb 2026 17:21:31 GMT</lastBuildDate>
     <atom:link href="https://gaabmarquez.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Automate Git Clone for Multiple GitHub Accounts with a Simple Shell Wrapper</title>
+      <link>https://gaabmarquez.github.io/blog/automate-git-clone-multiple-github-accounts</link>
+      <guid isPermaLink="true">https://gaabmarquez.github.io/blog/automate-git-clone-multiple-github-accounts</guid>
+      <description>A simple zsh function that automatically rewrites remote URLs and sets the correct SSH key and git identity when cloning repos from different GitHub accounts.</description>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>AI and Code Generation Tools: Promise and Pitfalls</title>
       <link>https://gaabmarquez.github.io/blog/ai-code-generation-future</link>
