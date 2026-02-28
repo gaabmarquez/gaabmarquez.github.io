@@ -48,24 +48,18 @@ export function About() {
           <div className="md:col-span-2 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               I&apos;m a Full Stack Engineer with over 10 years of experience
-              building scalable, secure, and maintainable software across
-              fintech, healthcare, and retail industries. I&apos;m passionate
-              about leveraging cutting-edge technologies to solve complex
-              challenges and drive operational efficiency.
+              designing and building software that scales. I enjoy working
+              across the entire stack&mdash;from crafting intuitive user
+              interfaces to architecting robust backend services and
+              infrastructure&mdash;and I&apos;m always looking for better ways
+              to solve problems and deliver value.
             </p>
             <p>
-              Throughout my career I&apos;ve worked on everything from migrating
-              monolithic PHP codebases to microservices architectures, to
-              building client onboarding systems for banks, to maintaining
-              healthcare platforms with 800+ unit tests and rigorous code review
-              processes. I thrive in cross-functional teams and take pride in
-              mentoring peers to ensure high-quality deliverables.
-            </p>
-            <p>
-              Whether it&apos;s designing gRPC endpoints in Go, building
-              responsive UIs in React, or orchestrating deployments with
-              Kubernetes&mdash;I care deeply about writing production-ready code
-              that stands up to real-world scale.
+              I thrive in collaborative, cross-functional teams where I can
+              contribute technically while also mentoring others and raising the
+              bar on code quality. I care deeply about writing clean,
+              maintainable code and building systems that hold up in production
+              at real-world scale.
             </p>
           </div>
 
