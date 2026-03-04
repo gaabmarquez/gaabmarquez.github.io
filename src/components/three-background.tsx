@@ -43,11 +43,23 @@ export function ParticleBackground() {
     )
     camera.position.z = 500
 
-    const renderer = new THREE.WebGLRenderer({
-      alpha: true,
-      antialias: false,
-      powerPreference: "high-performance",
-    })
+    // Remove any leftover canvas from a previous render (React Strict Mode double-mount)
+    const existingCanvas = container.querySelector("canvas")
+    if (existingCanvas) {
+      container.removeChild(existingCanvas)
+    }
+
+    let renderer: THREE.WebGLRenderer
+    try {
+      renderer = new THREE.WebGLRenderer({
+        alpha: true,
+        antialias: false,
+        powerPreference: "high-performance",
+      })
+    } catch {
+      // WebGL context could not be created (e.g., too many contexts, GPU blocked)
+      return
+    }
     renderer.setSize(container.clientWidth, container.clientHeight)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     container.appendChild(renderer.domElement)
