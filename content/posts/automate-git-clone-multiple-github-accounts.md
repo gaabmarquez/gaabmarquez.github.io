@@ -1,5 +1,5 @@
 ---
-title: "Automate Git Clone for Multiple GitHub Accounts with a Simple Shell Wrapper"
+title: "Automate Git Clone for Multiple GitHub Accounts with a simple shell wrapper"
 date: "2026-02-20"
 tags: ["Git", "SSH", "Zsh", "Shell Scripting", "Automation"]
 categories: ["Software Development", "Git", "Automation", "Shell"]
